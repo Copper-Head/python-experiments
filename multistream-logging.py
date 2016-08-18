@@ -23,12 +23,12 @@ logger.setLevel(logging.INFO)
 # Handles levels ERROR and up
 h1 = logging.StreamHandler(sys.stderr)
 h1.setLevel(logging.ERROR)
-h1.setFormatter(logging.Formatter("error handler: %(message)s"))
+h1.setFormatter(logging.Formatter("%(name)s error handler: %(message)s"))
 
 # Handler for a window of levels between INFO and WARNING
 h2 = logging.StreamHandler(sys.stdout)
 h2.setLevel(logging.INFO)
-h2.setFormatter(logging.Formatter("info handler: %(message)s"))
+h2.setFormatter(logging.Formatter("%(name)s info handler: %(message)s"))
 h2.addFilter(upper_bound(logging.WARNING))
 
 # Order in which handlers get added doesn't matter
